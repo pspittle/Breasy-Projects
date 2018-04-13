@@ -1,0 +1,22 @@
+<ion-header>
+
+    <ion-navbar color='KPMG2'>
+      <ion-title>iCan Contacts</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="closeModal()">Close</button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+  <h1 id='KPMG'>KPMG Risk Department Contacts</h1>
+  <ion-item *ngFor="let contact of contactlist" color='KPMG4'>
+      <h2>{{contact.Name}}</h2>
+      <h3>{{contact.Title}}</h3>
+      <h3>{{contact.Department}}</h3>
+      <h3>{{contact.Email}}</h3>
+    </ion-item>
+  </ion-content>
+  

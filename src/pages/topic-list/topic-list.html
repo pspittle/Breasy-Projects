@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar color='KPMG2'>
+      <ion-title color='KPMG2'>
+          {{topic.TopicTitle}}
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding >
+      <div id='alert'>
+          {{topic.TopicText}} 
+      </div>
+      <div id='alert' *ngIf="topic.TopicText2">
+          {{topic.TopicText2}}
+      </div>
+      <div *ngIf="topiclink">
+          <ion-item text-wrap id='topicref' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
+      </div>
+        <div *ngFor="let choice of choices;let i = index">
+      <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
+      </ion-item>
+    </div>
+    <div id='withoutslider' *ngIf="topic.TopicNum === 0; else noslider">
+        <ion-slides>
+            <ion-slide></ion-slide>
+         </ion-slides>
+       </div>
+  <!--       <ion-slides pager=true autoplay="5000" loop="true" speed="500" (ionSlideAutoplay)=true autoplayDisableOnInteraction = "false">
+        <ion-slide >
+            <img src='../../assets/imgs/KPMG_RGB_cr.png'>
+        </ion-slide>
+        <ion-slide>
+            <h1>Slider 2</h1>
+        </ion-slide>
+        <ion-slide>
+            <h1>Slider 3</h1>
+        </ion-slide>
+      </ion-slides>
+    </div>
+ -->    <ng-template #noslider>
+      <div id='withoutslider'>
+        <ion-slides>
+          <ion-slide></ion-slide>
+       </ion-slides>
+     </div>
+    </ng-template>
+    </ion-content>
+  
