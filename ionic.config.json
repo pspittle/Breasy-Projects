@@ -1,0 +1,8 @@
+{
+  "name": "iCan",
+  "app_id": "c8d1f716",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
