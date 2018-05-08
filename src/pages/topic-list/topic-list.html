@@ -14,7 +14,7 @@
           {{topic.TopicText2}}
       </div>
       <div *ngIf="topiclink">
-          <ion-item text-wrap id='topicref' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
+          <ion-item text-wrap id='link' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
       </div>
         <div *ngFor="let choice of choices;let i = index">
       <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}

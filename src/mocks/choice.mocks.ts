@@ -26,6 +26,16 @@ const ChoiceList: Choice[] = [
         ChoiceText: 'Technology',
         NextTopic: 71
     },
+    {
+        TopicNum: 3,
+        ChoiceText: 'Test Topic',
+        NextTopic: 71
+    },
+    {
+        TopicNum: 71,
+        ChoiceText: 'Test Topic Results',
+        NextTopic: 71
+    },
 {
     TopicNum: 4,
     ChoiceText: 'Management Consulting, Risk Consulting or Deals',

@@ -6,7 +6,7 @@ const TopicList: Topic[] = [
         TopicText: 'Welcome to iCan.',
         TopicText2: 'iCan provides on-the-go information on the Firm’s independence policies and guidance.',
         TopicTitle: 'iCan',
-        TopicLink: ''
+        TopicLink: 'www.google.com.au'
     },
     {
         TopicNum: 3,
