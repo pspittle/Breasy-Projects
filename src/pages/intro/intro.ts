@@ -17,7 +17,10 @@ export class IntroPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
+  navToMain() {
+    this.navCtrl.push('TabsPage');
 
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad IntroPage');
   }

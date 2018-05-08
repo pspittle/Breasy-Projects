@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color='KPMG2'>
+  <ion-navbar color='KPMG1'>
     <ion-title color='KPMG2'>
       iCan
     </ion-title>
@@ -21,7 +21,27 @@
       and guidance on non-audit services detailed in the Quality and Risk Management Manual.
       <br><br>
       Refer to <i>Section 11 - Non-Assurance Services</i> (for PIE and non-PIE audit clients), and <i>Section 20.14 - Non-audit services for SEC audit clients</i>.
-    </div>
-    <div padding>
-    <button id='link' ion-button block href="www.google.com" onclick="window.open('www.google.com', '_system', 'location=yes'); return false;">Quality and Risk Management Manual</button></div>
-     </ion-content>
+      <p></p>
+      <button id='link' ion-button block onclick="window.open('https://www.gqrmm-prod.kworld.kpmg.com/AU/15/')">Quality and Risk Management Manual</button>
+      <p></p>
+            <!-- <button id='link' ion-button block onclick="window.open('http://www.google.'); return false;">Quality and Risk Management Manual</button></div> -->
+      iCan is not to be used for specific fact based decisions.
+      <br><br>
+      If uncertain, advice must be sought from the national or functional Risk Management partner, the national Ethics and Independence partner, or the Global 
+      Independence Group (the final arbitrator if there is any difficulty). 
+      <p>
+       <button id='link' ion-button block onclick="window.open('https://intra.aspac.kpmg.com/sites/AU/businesssupport/riskmanagement/Pages/contacts.aspx')">
+        Risk Management Contacts</button>
+      </p>
+       <button id='link' ion-button block onclick="window.open('https://intra.ema.kpmg.com/sites/GQRM/depts/GI/Pages/default.aspx')">Global Independence Group</button>
+       <p>
+         If you are unsure whether your audit client is SEC, IESBA PIE, IESBA non-PIE or EU PIE, check the <i>Sentinel Affiliate Tool</i>.
+        </p>
+        <button id='link' ion-button block onclick="window.open('https://ngsclient.ema.kpmg.com/#%21/affiliate-tool/home')">
+          Sentinel Affiliate Tool</button>
+        <p>
+          <button color='KPMG3' ion-button block (click)="navToMain()">
+          Next</button>
+        </p>
+      </div>
+</ion-content>
