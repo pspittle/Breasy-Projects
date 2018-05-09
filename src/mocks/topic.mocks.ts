@@ -30,8 +30,8 @@ const TopicList: Topic[] = [
             TopicNum: 3,
             TopicTitle: 'Advice on Leading Practices',
             TopicType: 'Question',
-            TopicText: 'identify leading practices and provide KPMG’s interpretation of such practice, including market standard examples (e.g. accounting research, IFRS and industry leading practices)?',
-            TopicText2: '',
+            TopicText2: 'identify leading practices and provide KPMG’s interpretation of such practice, including market standard examples (e.g. accounting research, IFRS and industry leading practices)?',
+            TopicText: 'Can I...',
             TopicLink: '',
         },
         {

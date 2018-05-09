@@ -12,9 +12,6 @@
       </div>
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Question'">
             Question
-            <div id='iCanBody'>
-                Can I...
-            </div>
         </div>
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Answer'">
                 Answer
@@ -25,7 +22,7 @@
                <div id='iCanBody' *ngIf="topic.TopicText">
                 {{topic.TopicText}} 
         </div>
-        <div id='alert' *ngIf="topic.TopicText2">
+        <div id='iCanBody' *ngIf="topic.TopicText2">
           {{topic.TopicText2}}
         </div>
       <div *ngIf="topiclink">
