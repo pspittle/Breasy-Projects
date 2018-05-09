@@ -71,13 +71,32 @@ $colors: (
   // border: 2px solid black;
   padding: 1em;
 }
-#iCanbody {
+#iCanSubHeader {
+  color: white;
+  // font-weight: bold;
+  font-size: 12pt;
+  background: #005EB8;
+  //border: 20px solid white;
+  padding: 1em;
+  text-align: center;
+}
+#iCanQAN {
+  color: #005EB8;
+  // font-weight: bold;
+  font-size: 8pt;
+  background: white;
+  //border: 20px solid white;
+  padding: 1em;
+  text-align: center;
+}
+#iCanBody {
   color: #00338D;
   // font-weight: bold;
   font-size: 11pt;
   background: white;
   // border: 2px solid black;
   padding: 1em;
+  text-align: left;
 }
 #link {
   color: white;

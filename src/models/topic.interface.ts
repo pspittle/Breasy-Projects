@@ -4,4 +4,5 @@ export interface Topic {
     TopicText2: string;
     TopicTitle: string;
     TopicLink: string;
+    TopicType: string;
 }

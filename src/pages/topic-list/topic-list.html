@@ -1,18 +1,33 @@
 <ion-header>
-    <ion-navbar color='KPMG2'>
-      <ion-title color='KPMG2'>
-          {{topic.TopicTitle}}
+    <ion-navbar color='KPMG1'>
+      <ion-title>
+          iCan
       </ion-title>
     </ion-navbar>
   </ion-header>
   
-  <ion-content padding >
-      <div id='alert'>
-          {{topic.TopicText}} 
+  <ion-content >
+      <div id='iCanSubHeader'>
+          {{topic.TopicTitle}} 
       </div>
-      <div id='alert' *ngIf="topic.TopicText2">
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'Question'">
+            Question
+            <div id='iCanBody'>
+                Can I...
+            </div>
+        </div>
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'Answer'">
+                Answer
+            </div>
+            <div id='iCanQAN' *ngIf="topic.TopicType === 'Note'">
+                    Note
+                </div>
+               <div id='iCanBody' *ngIf="topic.TopicText">
+                {{topic.TopicText}} 
+        </div>
+        <div id='alert' *ngIf="topic.TopicText2">
           {{topic.TopicText2}}
-      </div>
+        </div>
       <div *ngIf="topiclink">
           <ion-item text-wrap id='link' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
       </div>
