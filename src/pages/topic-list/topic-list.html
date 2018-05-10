@@ -13,21 +13,30 @@
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Question'">
             Question
         </div>
-        <div id='iCanQAN' *ngIf="topic.TopicType === 'Answer'">
-                Answer
-            </div>
-            <div id='iCanQAN' *ngIf="topic.TopicType === 'Note'">
-                    Note
-                </div>
-               <div id='iCanBody' *ngIf="topic.TopicText">
-                {{topic.TopicText}} 
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'AnswerYes'">
+            Answer
+        </div>
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'AnswerNo'">
+            Answer
+        </div>
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'Note'">
+            Note
+        </div>
+        <div id='iCanBody' *ngIf="topic.TopicText">
+            {{topic.TopicText}} 
         </div>
         <div id='iCanBody' *ngIf="topic.TopicText2">
-          {{topic.TopicText2}}
+            {{topic.TopicText2}}
         </div>
-      <div *ngIf="topiclink">
-          <ion-item text-wrap id='link' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
-      </div>
+        <div id='icons' *ngIf="topic.TopicType === 'AnswerYes'">
+            <ion-icon id='icons' name="checkmark-circle" color='secondary' active='true'></ion-icon>
+        </div>
+        <div id='icons' *ngIf="topic.TopicType === 'AnswerNo'">
+            <ion-icon id='icons' name="close-circle" color='danger' active='true'></ion-icon>
+        </div>
+        <div *ngIf="topiclink">
+            <ion-item text-wrap id='link' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
+        </div>
         <div *ngFor="let choice of choices;let i = index">
       <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
       </ion-item>

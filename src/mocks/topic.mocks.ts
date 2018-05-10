@@ -37,8 +37,16 @@ const TopicList: Topic[] = [
         {
             TopicNum: 4,
             TopicTitle: 'Advice on Leading Practices',
-            TopicType: 'Answer',
+            TopicType: 'AnswerYes',
             TopicText: 'You can provide this service to an SEC audit client',
+            TopicText2: '',
+            TopicLink: '',
+        },
+        {
+            TopicNum: 5,
+            TopicTitle: 'Advice on Leading Practices',
+            TopicType: 'AnswerNo',
+            TopicText: 'You cannot provide this service blah blah blah!',
             TopicText2: '',
             TopicLink: '',
         },

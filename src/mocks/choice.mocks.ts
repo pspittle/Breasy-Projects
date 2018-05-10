@@ -36,7 +36,12 @@ const ChoiceList: Choice[] = [
                     ChoiceText: 'IESBA PIE',
                     NextTopic: 5
                 },
-                {
+                    {
+                        TopicNum: 5,
+                        ChoiceText: 'End',
+                        NextTopic: 2
+                    },
+               {
                     TopicNum: 3,
                     ChoiceText: 'IESBA Non-PIE',
                     NextTopic: 6
