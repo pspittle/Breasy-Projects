@@ -36,8 +36,8 @@
         <div *ngIf="topic.TopicType === '' || topic.TopicType === 'Question'; else istype">
 
             <div *ngFor="let choice of choices;let i = index">
-                <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
-                </ion-item>
+                <button ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
+                </button>
             </div>
         </div>
 
@@ -48,7 +48,9 @@
             <br><br>
             <ion-icon id='icons' name="checkmark-circle" color='secondary' active='true'></ion-icon>
             <br><br>
-            <!-- <button padding ion-button  (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button> -->
+        </div>
+        <div padding *ngIf="topic.TopicType === 'AnswerYes'">
+                <button ion-item id='answer' no-lines detail-push (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button>
         </div>
         <div id='icons' *ngIf="topic.TopicType === 'AnswerNo'">
             <br><br>
