@@ -4,7 +4,7 @@ const ChoiceList: Choice[] = [
     {
         TopicNum: 0,
         ChoiceText: 'Accounting Advice and Assistance',
-        NextTopic: 4
+        NextTopic: 99
     },
     {
         TopicNum: 0,
@@ -159,12 +159,12 @@ const ChoiceList: Choice[] = [
     {
         TopicNum: 0,
         ChoiceText: 'Tax and Legal',
-        NextTopic: 68
+        NextTopic: 99
     },
     {
         TopicNum: 0,
         ChoiceText: 'Technology',
-        NextTopic: 71
+        NextTopic: 99
     }
 ];
 
