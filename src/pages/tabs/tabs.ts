@@ -19,6 +19,10 @@ export class TabsPage {
   tab2root: string;
   tab3root: string;
   myModal: ModalController;
+  myModalData = {
+    name: "Peter Spittle",
+    Occupation: "Developer"
+  }
 
   constructor(private navCtrl:NavController, private modalCtl:ModalController) {
   }
@@ -31,9 +35,10 @@ export class TabsPage {
   }
   showContacts():void {
     const myModalOptions: ModalOptions = {
-        enableBackdropDismiss : false
-      };
-    const modal = this.modalCtl.create('ContactsPage');
+      enableBackdropDismiss : false,
+      showBackdrop : true
+    };
+    const modal = this.modalCtl.create('ContactsPage',this.myModalData,myModalOptions);
     modal.present();
   }
   

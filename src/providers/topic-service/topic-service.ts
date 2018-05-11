@@ -9,6 +9,8 @@ import { Topic } from '../../models/topic.interface';
 import { TOPIC_LIST } from '../../mocks/topic.mocks';
 import { Choice } from '../../models/choice.interface';
 import { CHOICE_LIST} from '../../mocks/choice.mocks'
+import { Notes } from '../../models/notes.interface';
+import { NOTES_LIST} from '../../mocks/notes.mocks'
 import { noUndefined } from '@angular/compiler/src/util';
 /*
   Generated class for the TopicServiceProvider provider.

@@ -1,9 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides, ModalController, ModalOptions  } from 'ionic-angular';
 import { TopicServiceProvider } from '../../providers/topic-service/topic-service';
 import { Topic } from '../../models/topic.interface';
 import { Choice } from '../../models/choice.interface';
-
+import { Notes} from '../../models/notes.interface';
+import { isNumber } from 'ionic-angular/util/util';
 
 /**
  * Generated class for the TopicListPage page.
@@ -19,12 +20,14 @@ import { Choice } from '../../models/choice.interface';
 })
 export class TopicListPage {
   topic: Topic;
+  notes: Notes;
   choices: Choice[];
   topicnum: number;
   topiclink: string;
   @ViewChild(Slides) slides: Slides;
 
-  constructor(private navCtrl: NavController, private navParams: NavParams, private topicSvc: TopicServiceProvider) {
+  constructor(private navCtrl: NavController, private navParams: NavParams, 
+    private topicSvc: TopicServiceProvider, private modalCtl: ModalController) {
   }
 
   getTopicList(): void {
@@ -54,8 +57,17 @@ export class TopicListPage {
     console.log('ionViewDidEnter TopicListPage');
   }
   showNext(nexttopic: number) {
-    if (nexttopic) {
+    console.log("Parameter passed: " + nexttopic);
+    if (isNumber (nexttopic)) {
       console.log("The next topic to navigate to is " + nexttopic);
       this.navCtrl.push('TopicListPage', {topicnum: nexttopic}) };
   }
+  showNotes(topicnum):void {
+    const myModalOptions: ModalOptions = {
+        enableBackdropDismiss : false
+      };
+    const modal = this.modalCtl.create('NotesPage',{topicnum: topicnum});
+    modal.present();
+  }
+
 }

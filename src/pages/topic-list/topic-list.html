@@ -7,9 +7,9 @@
   </ion-header>
   
   <ion-content >
-      <div id='iCanSubHeader'>
-          {{topic.TopicTitle}} 
-      </div>
+        <div id='iCanSubHeader'>
+            {{topic.TopicTitle}} 
+        </div>
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Question'">
             Question
         </div>
@@ -21,6 +21,7 @@
         </div>
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Note'">
             Note
+            <!-- <button ion-button (click)='showNotes(this.topicnum)'>Show Notes</button> -->
         </div>
         <div id='iCanBody' *ngIf="topic.TopicText">
             {{topic.TopicText}} 
@@ -28,23 +29,44 @@
         <div id='iCanBody' *ngIf="topic.TopicText2">
             {{topic.TopicText2}}
         </div>
+        <div *ngIf="topiclink">
+            <ion-item text-wrap id='link' href="topic.TopicLink" 
+                onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
+        </div>
+        <div *ngIf="topic.TopicType === '' || topic.TopicType === 'Question'; else istype">
+
+            <div *ngFor="let choice of choices;let i = index">
+                <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
+                </ion-item>
+            </div>
+        </div>
+
+<!-- // This section is for when there is a type eg. Notes, AnswerYes or AnswerNo in which case we don't want to  -->
+<!-- // present choices.  -->
+    <ng-template #istype>
         <div id='icons' *ngIf="topic.TopicType === 'AnswerYes'">
+            <br><br>
             <ion-icon id='icons' name="checkmark-circle" color='secondary' active='true'></ion-icon>
+            <br><br>
+            <!-- <button padding ion-button  (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button> -->
         </div>
         <div id='icons' *ngIf="topic.TopicType === 'AnswerNo'">
+            <br><br>
             <ion-icon id='icons' name="close-circle" color='danger' active='true'></ion-icon>
         </div>
-        <div *ngIf="topiclink">
-            <ion-item text-wrap id='link' href="topic.TopicLink" onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
-        </div>
-        <div *ngFor="let choice of choices;let i = index">
-      <ion-item text-wrap detail-push color='KPMG4' (click)="showNext(choice.NextTopic)">{{choice.ChoiceText}}
-      </ion-item>
-    </div>
-    <div id='withoutslider' *ngIf="topic.TopicNum === 0; else noslider">
-        <ion-slides>
-            <ion-slide></ion-slide>
-         </ion-slides>
+        <ion-fab bottom center>
+            <button ion-fab>Options</button>
+            <ion-fab-list side="left">
+                <button ion-fab colour='primary' (click)='showNext(0)'>Top</button>
+                <button ion-fab colour='primary' (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button>
+            </ion-fab-list>
+        </ion-fab>
+    </ng-template>
+    
+        <div id='withoutslider' *ngIf="topic.TopicNum === 0; else noslider">
+            <ion-slides>
+                <ion-slide></ion-slide>
+            </ion-slides>
        </div>
   <!--       <ion-slides pager=true autoplay="5000" loop="true" speed="500" (ionSlideAutoplay)=true autoplayDisableOnInteraction = "false">
         <ion-slide >
@@ -59,11 +81,11 @@
       </ion-slides>
     </div>
  -->    <ng-template #noslider>
-      <div id='withoutslider'>
-        <ion-slides>
-          <ion-slide></ion-slide>
-       </ion-slides>
-     </div>
-    </ng-template>
+            <div id='withoutslider'>
+                <ion-slides>
+                    <ion-slide></ion-slide>
+                </ion-slides>
+            </div>
+        </ng-template>
     </ion-content>
   
