@@ -1,5 +1,5 @@
 export interface Topic {
-    TopicNum : number;
+    TopicNum : string;
     TopicText: string;
     TopicText2: string;
     TopicTitle: string;

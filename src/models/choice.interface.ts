@@ -1,5 +1,5 @@
 export interface Choice {
-    TopicNum : number;
+    TopicNum : string;
     ChoiceText: string;
-    NextTopic: number;
+    NextTopic: string;
 }

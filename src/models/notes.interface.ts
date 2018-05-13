@@ -1,5 +1,5 @@
 export interface Notes {
-    TopicNum : number;
+    TopicNum : string;
     Note1: string;
     Note2: string;
     Note3: string;

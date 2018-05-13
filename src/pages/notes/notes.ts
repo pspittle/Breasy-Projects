@@ -20,13 +20,13 @@ import {Notes} from '../../models/notes.interface';
   templateUrl: 'notes.html',
 })
 export class NotesPage {
-  topicnum: number;
+  topicnum: string;
   notes: Notes;
 
   constructor(private view: ViewController, private navCtrl: NavController, 
     private navParams: NavParams) {
   }
-  mockGetNotes(topicnum: number): Observable<Notes> {
+  mockGetNotes(topicnum: string): Observable<Notes> {
     return Observable.of(NOTES_LIST.filter(note => note.TopicNum === topicnum )[0]);
   }
 
