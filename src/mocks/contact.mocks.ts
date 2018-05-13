@@ -3,14 +3,14 @@ import { Contact } from '../models/contacts.interface';
 const ContactList: Contact[] = [
     {
         Name: 'Briana Procter',
-        Title: 'Chief Getter of Shit Done',
+        Title: 'Chief Getter of S*** Done',
         Department: 'Risk Team',
         Email: 'breasy@internode.on.net'
     },
     {
-        Name: 'Peter Spittle',
+        Name: 'Joe Bloggs',
         Title: 'Lowly Worker Bee',
-        Department: 'IT Support',
+        Department: 'Ionic Development Support',
         Email: 'lowly@it.net'
     },
     {
