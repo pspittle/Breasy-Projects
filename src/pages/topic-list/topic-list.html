@@ -35,7 +35,15 @@
                     <li>{{bullet.BulletText}}</li>
             </div></ul>
         </div>
-    
+        <div id='iCanQAN' *ngIf="notes[0]">
+                Note
+        </div>
+        <div id='iCanBody' *ngIf="notes[0]">
+            <div *ngFor="let note of notes;let i = index">
+                    {{note.NoteText}}
+            </div>
+        </div>
+       
         <div *ngIf="topiclink">
             <ion-item text-wrap id='link' href="topic.TopicLink" 
                 onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>

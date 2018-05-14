@@ -11,6 +11,7 @@ import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Observable'
 
 import {BULLETS_LIST} from '../../mocks/bullets.mocks';
+import {NOTES_LIST} from '../../mocks/notes.mocks';
 import {Bullets} from '../../models/bullets.interface';
 
 /**
@@ -27,7 +28,7 @@ import {Bullets} from '../../models/bullets.interface';
 })
 export class TopicListPage {
   topic: Topic;
-  notes: Notes;
+  notes: Notes[];
   choices: Choice[];
   bullets: Bullets[];
   topicnum: string;
@@ -44,6 +45,7 @@ export class TopicListPage {
     this.topicSvc.mockGetChoices(this.topicnum).subscribe(data => console.log(data));
     this.topicSvc.mockGetChoices(this.topicnum).subscribe(data => this.choices = data);
     this.mockGetBullets(this.topicnum).subscribe(data => this.bullets = data);
+    this.mockGetNotes(this.topicnum).subscribe(data => this.notes = data);
     console.log('The topic retrieved was: ' + this.topic);
     console.log('The bullets retrieved was: ' + this.bullets);
   }
@@ -83,5 +85,8 @@ export class TopicListPage {
     return Observable.of(BULLETS_LIST.filter(bullet => bullet.TopicNum === topicnum ));
   }
 
+  mockGetNotes(topicnum: string): Observable<Notes[]> {
+    return Observable.of(NOTES_LIST.filter(note => note.TopicNum === topicnum ));
+  }
 
 }
