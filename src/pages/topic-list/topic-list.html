@@ -29,7 +29,7 @@
         <div id='iCanBody' *ngIf="topic.TopicText2">
             {{topic.TopicText2}}
         </div>
-        <div *ngIf="bullets[0]">
+        <div id='iCanBullet' *ngIf="bullets[0]">
             <ul>
             <div *ngFor="let bullet of bullets;let i = index">
                     <li>{{bullet.BulletText}}</li>
@@ -52,14 +52,14 @@
 <!-- // present choices.  -->
     <ng-template #istype>
         <div id='icons' *ngIf="topic.TopicType === 'AnswerYes'">
-            <br>
+            
             <ion-icon id='icons' name="checkmark-circle" color='secondary' active='true'></ion-icon>
-            <br><br>
+            <br>
         </div>
         <div id='icons' *ngIf="topic.TopicType === 'AnswerNo'">
-            <br>
+            
             <ion-icon id='icons' name="close-circle" color='danger' active='true'></ion-icon>
-            <br><br>
+            <br>
         </div>
         <div padding>
                 <button ion-item id='answer' no-lines detail-push (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button>
