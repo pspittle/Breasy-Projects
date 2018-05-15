@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides, ModalController, ModalOptions  } from 'ionic-angular';
 import { TopicServiceProvider } from '../../providers/topic-service/topic-service';
+import { Body } from '../../models/body.interface';
 import { Topic } from '../../models/topic.interface';
 import { Choice } from '../../models/choice.interface';
 import { Notes} from '../../models/notes.interface';
@@ -11,6 +12,7 @@ import 'rxjs/add/observable/of';
 import { Observable } from 'rxjs/Observable'
 
 import {BULLETS_LIST} from '../../mocks/bullets.mocks';
+import {BODY_LIST} from '../../mocks/body.mocks';
 import {NOTES_LIST} from '../../mocks/notes.mocks';
 import {Bullets} from '../../models/bullets.interface';
 
@@ -28,6 +30,7 @@ import {Bullets} from '../../models/bullets.interface';
 })
 export class TopicListPage {
   topic: Topic;
+  body: Body[];
   notes: Notes[];
   choices: Choice[];
   bullets: Bullets[];
@@ -46,6 +49,7 @@ export class TopicListPage {
     this.topicSvc.mockGetChoices(this.topicnum).subscribe(data => this.choices = data);
     this.mockGetBullets(this.topicnum).subscribe(data => this.bullets = data);
     this.mockGetNotes(this.topicnum).subscribe(data => this.notes = data);
+    this.mockGetBody(this.topicnum).subscribe(data => this.body = data);
     console.log('The topic retrieved was: ' + this.topic);
     console.log('The bullets retrieved was: ' + this.bullets);
   }
@@ -88,5 +92,9 @@ export class TopicListPage {
   mockGetNotes(topicnum: string): Observable<Notes[]> {
     return Observable.of(NOTES_LIST.filter(note => note.TopicNum === topicnum ));
   }
+  mockGetBody(topicnum: string): Observable<Body[]> {
+    return Observable.of(BODY_LIST.filter(body => body.TopicNum === topicnum ));
+  }
+
 
 }

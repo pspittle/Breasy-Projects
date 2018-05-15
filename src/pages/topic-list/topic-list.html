@@ -29,7 +29,13 @@
         <div id='iCanBody' *ngIf="topic.TopicText2">
             {{topic.TopicText2}}
         </div>
-        <div id='iCanBullet' *ngIf="bullets[0]">
+<!-- // This section places any body text onto the page that it found for this TopicNum from the BODY_LIST table -->
+<!--         <div id='iCanBody' *ngIf="body[0]">
+            <div *ngFor="let bod of body;let i = index">
+                {{bod.BodyText}}
+            </div>
+        </div>
+ -->    <div id='iCanBullet' *ngIf="bullets[0]">
             <ul>
             <div *ngFor="let bullet of bullets;let i = index">
                     <li>{{bullet.BulletText}}</li>
