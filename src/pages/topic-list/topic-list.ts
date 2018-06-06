@@ -5,6 +5,8 @@ import { Body } from '../../models/body.interface';
 import { Topic } from '../../models/topic.interface';
 import { Choice } from '../../models/choice.interface';
 import { Notes} from '../../models/notes.interface';
+import { Links} from '../../models/links.interface';
+import {Bullets} from '../../models/bullets.interface';
 import { isNumber } from 'ionic-angular/util/util';
 import { isDefined } from '@angular/compiler/src/util';
 import 'rxjs/add/operator/map';
@@ -14,7 +16,7 @@ import { Observable } from 'rxjs/Observable'
 import {BULLETS_LIST} from '../../mocks/bullets.mocks';
 import {BODY_LIST} from '../../mocks/body.mocks';
 import {NOTES_LIST} from '../../mocks/notes.mocks';
-import {Bullets} from '../../models/bullets.interface';
+import { LINKS_LIST} from '../../mocks/links.mocks'
 
 /**
  * Generated class for the TopicListPage page.
@@ -32,6 +34,7 @@ export class TopicListPage {
   topic: Topic;
   body: Body[];
   notes: Notes[];
+  links: Links[];
   choices: Choice[];
   bullets: Bullets[];
   topicnum: string;
@@ -50,6 +53,7 @@ export class TopicListPage {
     this.mockGetBullets(this.topicnum).subscribe(data => this.bullets = data);
     this.mockGetNotes(this.topicnum).subscribe(data => this.notes = data);
     this.mockGetBody(this.topicnum).subscribe(data => this.body = data);
+    this.mockGetLinks(this.topicnum).subscribe(data => this.links = data);
     console.log('The topic retrieved was: ' + this.topic);
     console.log('The bullets retrieved was: ' + this.bullets);
   }
@@ -94,6 +98,9 @@ export class TopicListPage {
   }
   mockGetBody(topicnum: string): Observable<Body[]> {
     return Observable.of(BODY_LIST.filter(body => body.TopicNum === topicnum ));
+  }
+  mockGetLinks(topicnum: string): Observable<Links[]> {
+    return Observable.of(LINKS_LIST.filter(links => links.TopicNum === topicnum ));
   }
 
 

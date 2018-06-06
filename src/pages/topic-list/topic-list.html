@@ -13,29 +13,22 @@
         <div id='iCanQAN' *ngIf="topic.TopicType === 'Question'">
             Question
         </div>
-        <div id='iCanQAN' *ngIf="topic.TopicType === 'AnswerYes'">
+        <div id='iCanQAN' *ngIf="topic.TopicType === 'AnswerYes' || topic.TopicType === 'AnswerNo'">
             Answer
         </div>
-        <div id='iCanQAN' *ngIf="topic.TopicType === 'AnswerNo'">
-            Answer
-        </div>
-        <div id='iCanQAN' *ngIf="topic.TopicType === 'Note'">
-            Note
-            <!-- <button ion-button (click)='showNotes(this.topicnum)'>Show Notes</button> -->
-        </div>
-        <div id='iCanBody' *ngIf="topic.TopicText">
+<!--         <div id='iCanBody' *ngIf="topic.TopicText">
             {{topic.TopicText}} 
         </div>
         <div id='iCanBody' *ngIf="topic.TopicText2">
             {{topic.TopicText2}}
         </div>
-<!-- // This section places any body text onto the page that it found for this TopicNum from the BODY_LIST table -->
-<!--         <div id='iCanBody' *ngIf="body[0]">
+ --><!-- <!-- <!-- // This section places any body text onto the page that it found for this TopicNum from the BODY_LIST table -->
+        <div id='iCanBody' *ngIf="body[0]">
             <div *ngFor="let bod of body;let i = index">
-                {{bod.BodyText}}
+                {{bod.BodyText}} <br><br>
             </div>
         </div>
- -->    <div id='iCanBullet' *ngIf="bullets[0]">
+        <div id='iCanBullet' *ngIf="bullets[0]">
             <ul>
             <div *ngFor="let bullet of bullets;let i = index">
                     <li>{{bullet.BulletText}}</li>
@@ -44,15 +37,18 @@
         <div id='iCanQAN' *ngIf="notes[0]">
                 Note
         </div>
-        <div id='iCanBody' *ngIf="notes[0]">
+        <div id='iCanNote' *ngIf="notes[0]">
             <div *ngFor="let note of notes;let i = index">
-                    {{note.NoteText}}
+                    {{note.NoteText}}<br><br>
             </div>
         </div>
        
-        <div *ngIf="topiclink">
-            <ion-item text-wrap id='link' href="topic.TopicLink" 
-                onclick="window.open('topic.TopicLink', '_system', 'location=yes'); return false;">{{topic.TopicLink}}</ion-item>
+        <div *ngIf="links[0]">
+            <div *ngFor="let lnk of links;let i = index">
+                <ion-item text-wrap id='link' href='lnk.LinkURL'  
+                    onclick="window.open(lnk.LinkURL, '_system', 'location=yes'); return false;">{{lnk.LinkLabel}}</ion-item>
+            </div>
+    
         </div>
         <div *ngIf="topic.TopicType === '' || topic.TopicType === 'Question'; else istype">
 
@@ -76,7 +72,7 @@
             <br>
         </div>
         <div padding>
-                <button ion-item id='answer' no-lines detail-push (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button>
+                <button ion-item text-wrap id='answer' no-lines detail-push (click)='showNext(choices[0].NextTopic)'>{{choices[0].ChoiceText}}</button>
         </div>
 <!--         <ion-fab bottom center>
             <button ion-fab>Options</button>
