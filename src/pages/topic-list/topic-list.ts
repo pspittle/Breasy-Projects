@@ -38,7 +38,6 @@ export class TopicListPage {
   choices: Choice[];
   bullets: Bullets[];
   topicnum: string;
-  topiclink: string;
   @ViewChild(Slides) slides: Slides;
 
   constructor(private navCtrl: NavController, private navParams: NavParams, 
@@ -67,8 +66,6 @@ export class TopicListPage {
       this.topicnum = "0"
     }
     this.getTopicList();
-    this.topiclink = this.topic.TopicLink;
-    console.log(this.topiclink);
   }
 
   ionViewDidEnter() {
