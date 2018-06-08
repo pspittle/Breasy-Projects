@@ -99,6 +99,8 @@ export class TopicListPage {
   mockGetLinks(topicnum: string): Observable<Links[]> {
     return Observable.of(LINKS_LIST.filter(links => links.TopicNum === topicnum ));
   }
-
+  openWindow(URL: string): void {
+    window.open(URL);
+  }
 
 }

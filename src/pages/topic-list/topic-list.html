@@ -44,10 +44,11 @@
         </div>
        
         <div *ngIf="links[0]">
-            <div *ngFor="let lnk of links;let i = index">
-                <ion-item text-wrap id='link' href='lnk.LinkURL'  
+            <div id='iCanBody' *ngFor="let lnk of links;let i = index">
+                <button id='link' ion-button detail-push no-lines block (click)="openWindow(lnk.LinkURL)">{{lnk.LinkLabel}}</button>
+<!--                 <ion-item text-wrap id='link' href='lnk.LinkURL'  
                     onclick="window.open(lnk.LinkURL, '_system', 'location=yes'); return false;">{{lnk.LinkLabel}}</ion-item>
-            </div>
+ -->            </div>
     
         </div>
         <div *ngIf="topic.TopicType === '' || topic.TopicType === 'Question'; else istype">
