@@ -31,6 +31,7 @@ import { LINKS_LIST} from '../../mocks/links.mocks'
   templateUrl: 'topic-list.html',
 })
 export class TopicListPage {
+  mymodal: ModalController;
   topic: Topic;
   body: Body[];
   notes: Notes[];
@@ -100,7 +101,7 @@ export class TopicListPage {
     return Observable.of(LINKS_LIST.filter(links => links.TopicNum === topicnum ));
   }
   openWindow(URL: string): void {
-    window.open(URL);
+    window.open(URL, '_blank', 'location=no');
   }
 
 }
